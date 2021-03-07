@@ -1,0 +1,11 @@
+[Unit]
+Description=Uses keyboard leds to indicate network traffic
+
+[Service]
+# Make sure to configure cmdline flags here
+ExecStart=/usr/bin/ledcapture 
+Restart=on-failure
+Type=simple
+
+[Install]
+WantedBy=multi-user.target

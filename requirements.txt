@@ -1,0 +1,2 @@
+pyshark==0.4.3
+netifaces==0.10.4
