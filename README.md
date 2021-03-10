@@ -2,6 +2,8 @@
 
 Flashes keyboard leds on incoming/outgoing network packets
 
+![demo](demo.gif)
+
 ## Usage
 
 Requires root priviledges to run
