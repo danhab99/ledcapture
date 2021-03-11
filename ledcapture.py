@@ -2,7 +2,7 @@
 import pyshark
 import netifaces as ni
 import argparse
-import os
+import os,sys
 
 INPUTS = list(set(x.split(":")[0] for x in os.listdir("/sys/class/leds")))
 INTERFACES = os.listdir("/sys/class/net")
@@ -22,12 +22,17 @@ if not os.geteuid() == 0:
 capture = pyshark.LiveCapture(interface=args.interface)
 interfaces = ni.ifaddresses(args.interface)
 
+myip = None
+
 for i in interfaces.values():
-  if "192.168" in i[0]["addr"]:
+  if "192.168" in i[0]["addr"] or "10.0.0" in i[0]["addr"]:
     myip = i[0]["addr"]
     break
 
-print("My ip is " + myip)
+if myip is not None:
+    print("My ip is " + myip)
+else:
+    sys.exit(1)
 
 class StateChanger:
   def __init__(self, filepath):
