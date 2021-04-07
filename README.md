@@ -30,6 +30,12 @@ optional arguments:
 
 Requires python3, developed using `python3.8.5`
 
+If running [Arch Linux](https://archlinux.org/), you need to install `wireshark-cli` in order to get `tshark` (Source: [Install tshark](https://tshark.dev/setup/install/))
+
+```
+sudo pacman -S wireshark-cli
+``` 
+
 1. Make sure to set the command line flags in `ledcap.service` before continuing.
 2. Run `sudo make install`
 
