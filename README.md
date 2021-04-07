@@ -1,6 +1,6 @@
 # LED Net Capture
 
-Flashes keyboard leds on incoming/outgoing network packets
+Flashes keyboard leds on incoming/outgoing network packets. Keyboard and network interface are automatically detected if their are only one choice for each.
 
 ![demo](demo.gif)
 

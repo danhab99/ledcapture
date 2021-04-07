@@ -6,11 +6,20 @@ import os,sys
 
 INPUTS = list(set(x.split(":")[0] for x in os.listdir("/sys/class/leds")))
 INTERFACES = os.listdir("/sys/class/net")
+BUTTON_CHOICES = ["capslock", "numlock", "scrolllock"]
 
 parser = argparse.ArgumentParser(description="Flashes keyboard LEDs on network activity")
-parser.add_argument("--keyboard-class", help="The virtual class name for the targeted keyboard", required=True, choices=INPUTS)
-parser.add_argument("--interface", help="The network interface to monitor", required=True, choices=INTERFACES)
-BUTTON_CHOICES = ["capslock", "numlock", "scrolllock"]
+
+if len(INPUTS) == 1:
+  parser.add_argument("--keyboard-class", help="The virtual class name for the targeted keyboard", choices=INPUTS, default=INPUTS[0])
+else:
+  parser.add_argument("--keyboard-class", help="The virtual class name for the targeted keyboard", required=True, choices=INPUTS)
+
+if len(INTERFACES) == 1:
+  parser.add_argument("--interface", help="The network interface to monitor", choices=INTERFACES, default=INTERFACES[0])
+else:
+  parser.add_argument("--interface", help="The network interface to monitor", required=True, choices=INTERFACES)
+
 parser.add_argument("--incoming", help="Which LED to flash on incoming packets", choices=BUTTON_CHOICES, default="capslock")
 parser.add_argument("--outgoing", help="Which LED to flash on outgoing packets", choices=BUTTON_CHOICES, default="scrolllock")
 
