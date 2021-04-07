@@ -1,5 +1,14 @@
 # LED Net Capture
 
+![AUR license](https://img.shields.io/aur/license/ledcapture-git?style=flat-square)
+![AUR version](https://img.shields.io/aur/version/ledcapture-git?style=flat-square)
+![AUR votes](https://img.shields.io/aur/votes/ledcapture-git?style=flat-square)
+![AUR maintainer](https://img.shields.io/aur/maintainer/ledcapture-git?style=flat-square)
+![AUR last modified](https://img.shields.io/aur/last-modified/ledcapture-git?style=flat-square)
+[![GitHub](https://img.shields.io/github/stars/danhab99/ledcapture.svg?style=flat-square)](https://github.com/danhab99/ledcapture)
+[![GitHub](https://img.shields.io/github/forks/danhab99/ledcapture.svg?style=flat-square)](https://github.com/danhab99/ledcapture/network)
+[![GitHub](https://img.shields.io/github/release/danhab99/ledcapture.svg?style=flat-square)](https://github.com/danhab99/ledcapture/releases)
+
 Flashes keyboard leds on incoming/outgoing network packets. Keyboard and network interface are automatically detected if their are only one choice for each.
 
 ![demo](demo.gif)
